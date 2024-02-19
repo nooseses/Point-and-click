@@ -96,7 +96,7 @@ p {
 #mainCharacterSpeech {
     left: 0px;
     bottom: 0px;
-    background-color: red;
+    background-color: rgb(0, 115, 255);
     width: 100px;
     height: 100px;
 }
@@ -104,7 +104,7 @@ p {
 #counterSpeech {
     right: 0px;
     bottom: 0px;
-    background-color: red;
+    background-color: rgb(0, 115, 255);
     width: 100px;
     height: 100px;
 }
