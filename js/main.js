@@ -16,6 +16,10 @@ const sec = 1000
 const mainCharacter = document.getElementById("mainCharacter");
 const offsetCharacter = 16;
 
+//Speech bubble
+const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
+const counterSpeech = document.getElementById("counterSpeech");
+
 //Inventory
 const inventoryBox = document.getElementById("inventoryBox"); //div
 const inventoryList = document.getElementById("inventoryList"); //ul
@@ -23,6 +27,7 @@ const inventoryList = document.getElementById("inventoryList"); //ul
 //Foreground Items
 const door1 = document.getElementById("door1");
 const sign = document.getElementById("sign");
+const key1 = document.getElementById("key1");
 
 
 gameWindow.onclick = function (e) {
@@ -37,9 +42,7 @@ gameWindow.onclick = function (e) {
     console.log(e.target.id);
     switch (e.target.id) {
 
-        case "door1":
-            door1.style.opacity = 0.5;
-            sign.style.opacity = 1;
+        case "key1":
             if (document.getElementById("key1") !== null) {
                 console.log('Found key!');
                 document.getElementById("key1").remove();
@@ -129,14 +132,26 @@ function updateInventory(inventory, inventoryList) {
     })
 }
 
-function showMessage(targetBalloon) {
-    document.getElementById(targetBalloon).style.opacity = "1";
-    setTimeout(hideMessage, 7 * sec, targetBalloon);
+/* shows nessage in speech bubble */
 
-    setTimeout(showMessage, 2 * sec, "mainCharacterSpeech");
-    setTimeout(showMessage, 3.5 * sec, "counterSpeech");
+/**
+ * shows message in speech bubble
+ * @param {} targetBalloon 
+ * @param {string} message
+ */
+
+function showMessage(targetBalloon, message) {
+    targetBalloon.style.opacity = "1";
+    targetBalloon.innerText = message;
+    setTimeout(hideMessage, 4 * sec, targetBalloon);
 }
-
+/**
+ * 
+ * @param {string} targetBalloon 
+ */
 function hideMessage(targetBalloon) {
-    document.getElementById(targetBalloon).style.opacity = "0";
+    targetBalloon.style.opacity = "0";
 }
+
+setTimeout(showMessage, 2 * sec, mainCharacterSpeech, "Hello, I am the main character!");
+setTimeout(showMessage, 3.5 * sec, counterSpeech, "I'm a huge fan!!!");

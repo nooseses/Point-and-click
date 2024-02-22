@@ -43,12 +43,11 @@ p {
 
 /*Foreground Items*/
 #door1 {
-    width: 64px;
-    height: 64px;
-    background-color: #fb00ff;
+    width: 42px;
+    height: 45px;
     opacity: 1;
-    top: 150px;
-    left: 400px;
+    top: 82px;
+    left: 495px;
 }
 
 #door2 {
@@ -64,8 +63,8 @@ p {
     height: 32px;
     background-color: #fffb00;
     opacity: 1;
-    top: 166px;
-    left: 416px;
+    top: 445px;
+    left: 255px;
 }
 
 #sign {
@@ -125,9 +124,9 @@ p {
 #counterAvatar {
     right: 0px;
     bottom: 0px;
-    background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 68px;
+    /*   opacity: 0; */
 }
 
 #counterSpeech {
@@ -141,7 +140,6 @@ p {
     top: 0px;
     left: 0px;
 }
-
 
 /*Classes*/
 .foreground {
