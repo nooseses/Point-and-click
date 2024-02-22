@@ -63,8 +63,8 @@ p {
     height: 32px;
     background-color: #fffb00;
     opacity: 1;
-    top: 445px;
-    left: 255px;
+    top: 110px;
+    left: 305px;
 }
 
 #sign {
@@ -73,6 +73,14 @@ p {
     background-color: #442c1c;
     top: 450px;
     left: 10px;
+}
+
+#statue {
+    width: 35px;
+    height: 64px;
+    opacity: 1;
+    top: 290px;
+    left: 702px;
 }
 
 /*Inventory box*/
@@ -126,7 +134,7 @@ p {
     bottom: 0px;
     width: 72px;
     height: 68px;
-    /*   opacity: 0; */
+    opacity: 0;
 }
 
 #counterSpeech {

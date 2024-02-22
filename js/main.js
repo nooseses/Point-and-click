@@ -19,6 +19,7 @@ const offsetCharacter = 16;
 //Speech bubble
 const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 const counterSpeech = document.getElementById("counterSpeech");
+const counterAvatar = document.getElementById("counterAvatar");
 
 //Inventory
 const inventoryBox = document.getElementById("inventoryBox"); //div
@@ -72,6 +73,15 @@ gameWindow.onclick = function (e) {
         case "sign":
             sign.style.opacity = 0.5;
             door1.style.opacity = 1;
+            break;
+
+        case "statue":
+            showMessage(mainCharacterSpeech, "This statue looks terrible.");
+            setTimeout(function () { counterAvatar.style.opacity = 1 }, 4 * sec);
+            setTimeout(showMessage, 4 * sec, counterSpeech, "You know I can hear you right?");
+            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, "Oh, I didn't mean it like that...");
+            setTimeout(showMessage, 12 * sec, counterSpeech, "You are stupid! *Spits on you*");
+            setTimeout(function () { counterAvatar.style.opacity = 0 }, 16 * sec);
             break;
 
         default:
@@ -152,6 +162,3 @@ function showMessage(targetBalloon, message) {
 function hideMessage(targetBalloon) {
     targetBalloon.style.opacity = "0";
 }
-
-setTimeout(showMessage, 2 * sec, mainCharacterSpeech, "Hello, I am the main character!");
-setTimeout(showMessage, 3.5 * sec, counterSpeech, "I'm a huge fan!!!");
