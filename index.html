@@ -22,8 +22,12 @@
         <!--dialog bar-->
         <div id="dialogBar" class="foreground">
             <div id="setMainDialog">
-                <div id="mainCharacterSpeech" class="foreground"></div>
-                <div id="counterSpeech" class="foreground"></div>
+                <div id="mainCharacterAvatar" class="foreground">
+                    <img src="assets/img/portairt.png" alt="main character avatar">
+                </div>
+                <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+                <div id="counterSpeech" class="foreground speech-bubble">no problem</div>
+                <div id="counterAvatar" class="foreground"></div>
                 <div id="brownBar"></div>
             </div>
         </div>
@@ -34,7 +38,7 @@
             <ul id="inventoryList">
 
             </ul>
-            
+
         </div>
 
         <!--Foreground items-->
@@ -46,7 +50,7 @@
 
         <!--Main character-->
         <div id="mainCharacter" class="heroCharacter">
-
+            <img id="mcImage" draggable="false" src="assets/img/animated-character-2-idle.gif" alt="mc image">
         </div>
 
         <!--Background-->

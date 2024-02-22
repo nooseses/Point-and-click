@@ -30,7 +30,6 @@ p {
     height: 608px;
     grid-column-start: 2;
     grid-row-start: 2;
-
     background-color: blue;
 }
 
@@ -38,7 +37,6 @@ p {
 #mainCharacter {
     width: 32px;
     height: 32px;
-    background-color: #1286a7;
     left: 400px;
     top: 304px;
 }
@@ -110,8 +108,22 @@ p {
     bottom: 0px;
 }
 
-#mainCharacterSpeech {
+/* dialogue art */
+
+#mainCharacterAvatar {
     left: 0px;
+    bottom: 0px;
+    width: 72px;
+    height: 68px;
+}
+
+#mainCharacterSpeech {
+    left: 72px;
+    top: 0px;
+}
+
+#counterAvatar {
+    right: 0px;
     bottom: 0px;
     background-color: red;
     width: 100px;
@@ -119,11 +131,8 @@ p {
 }
 
 #counterSpeech {
-    right: 0px;
-    bottom: 0px;
-    background-color: red;
-    width: 100px;
-    height: 100px;
+    right: 72px;
+    top: 0px;
 }
 
 #tilemap {
@@ -151,4 +160,15 @@ p {
 .background {
     position: absolute;
     z-index: 0;
+}
+
+.speech-bubble {
+    background-color: white;
+    border-radius: 60px;
+    color: #000000;
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    width: 300px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 }

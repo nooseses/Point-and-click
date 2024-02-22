@@ -10,6 +10,8 @@ gameState = {
     ]
 }
 
+const sec = 1000
+
 //Main Character
 const mainCharacter = document.getElementById("mainCharacter");
 const offsetCharacter = 16;
@@ -27,29 +29,28 @@ gameWindow.onclick = function (e) {
     var rect = gameWindow.getBoundingClientRect();
     var x = e.clientX - rect.left;
     var y = e.clientY - rect.top;
-    if(e.target.id !== "mainCharacter") {
+    if (e.target.id !== "mcImage") {
         mainCharacter.style.left = x - offsetCharacter + "px";
         mainCharacter.style.top = y - offsetCharacter + "px";
     }
 
     console.log(e.target.id);
     switch (e.target.id) {
-        
+
         case "door1":
-            mainCharacter.style.backgroundColor = "#FFFF00";
             door1.style.opacity = 0.5;
             sign.style.opacity = 1;
-            if(document.getElementById("key1") !== null){
+            if (document.getElementById("key1") !== null) {
                 console.log('Found key!');
                 document.getElementById("key1").remove();
                 changeInventory('key', 'add');
             }
-            
+
             break;
         case "door2":
-            if(gameState.door2locked == true) {
+            if (gameState.door2locked == true) {
                 // check if we have key
-                if(document.getElementById("inv-key") !== null) {
+                if (document.getElementById("inv-key") !== null) {
                     //yes -> unlock door?
                     gameState.door2locked = false;
                     changeInventory('key', 'delete');
@@ -62,18 +63,16 @@ gameWindow.onclick = function (e) {
             } else {
                 console.log('enter building');
             }
-            
+
             break;
 
         case "sign":
-            mainCharacter.style.backgroundColor = "#FFFF00";
             sign.style.opacity = 0.5;
             door1.style.opacity = 1;
             break;
 
         default:
             //explode
-            mainCharacter.style.backgroundColor = "#1286a7";
             door1.style.opacity = 1;
             sign.style.opacity = 1;
             break;
@@ -89,18 +88,18 @@ gameWindow.onclick = function (e) {
  * @returns 
  */
 function changeInventory(itemName, action) {
-    if(itemName == null || action == null) {
+    if (itemName == null || action == null) {
         console.log('wrong parameters given to changeInventory()');
-        return 
+        return
     }
 
-    switch(action) {
+    switch (action) {
         case 'add':
             gameState.inventory.push(itemName);
             break
         case 'delete':
-            gameState.inventory.find(function(item, index){
-                if(item == itemName) {
+            gameState.inventory.find(function (item, index) {
+                if (item == itemName) {
                     var index = gameState.inventory.indexOf(item);
                     if (index !== -1) {
                         gameState.inventory.splice(index, 1);
@@ -120,9 +119,9 @@ function changeInventory(itemName, action) {
  * @param {Array} inventory array of items 
  * @param {HTMLElement} inventoryList html <ul> element 
  */
-function updateInventory(inventory, inventoryList){
+function updateInventory(inventory, inventoryList) {
     inventoryList.innerHTML = '';
-    inventory.forEach(function(item) {
+    inventory.forEach(function (item) {
         const inventoryItem = document.createElement("li");
         inventoryItem.id = "inv-" + item;
         inventoryItem.innerText = item;
@@ -130,3 +129,14 @@ function updateInventory(inventory, inventoryList){
     })
 }
 
+function showMessage(targetBalloon) {
+    document.getElementById(targetBalloon).style.opacity = "1";
+    setTimeout(hideMessage, 7 * sec, targetBalloon);
+
+    setTimeout(showMessage, 2 * sec, "mainCharacterSpeech");
+    setTimeout(showMessage, 3.5 * sec, "counterSpeech");
+}
+
+function hideMessage(targetBalloon) {
+    document.getElementById(targetBalloon).style.opacity = "0";
+}
