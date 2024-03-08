@@ -45,19 +45,19 @@ gameWindow.onclick = function (e) {
 
         case "key1":
             if (document.getElementById("key1") !== null) {
-                console.log('Found key!');
+                console.log('Found apple!');
                 document.getElementById("key1").remove();
-                changeInventory('key', 'add');
+                changeInventory('apple', 'add');
             }
 
             break;
         case "door2":
             if (gameState.door2locked == true) {
                 // check if we have key
-                if (document.getElementById("inv-key") !== null) {
+                if (document.getElementById("inv-apple") !== null) {
                     //yes -> unlock door?
                     gameState.door2locked = false;
-                    changeInventory('key', 'delete');
+                    changeInventory('apple', 'delete');
                     console.log('Door unlocked!');
 
                 } else {
@@ -80,7 +80,7 @@ gameWindow.onclick = function (e) {
             setTimeout(function () { counterAvatar.style.opacity = 1 }, 4 * sec);
             setTimeout(showMessage, 4 * sec, counterSpeech, "You know I can hear you right?");
             setTimeout(showMessage, 8 * sec, mainCharacterSpeech, "Oh, I didn't mean it like that...");
-            setTimeout(showMessage, 12 * sec, counterSpeech, "You are stupid! *Spits on you*");
+            setTimeout(showMessage, 12 * sec, counterSpeech, "Okay, find the apple near that wooden cart to my right.");
             setTimeout(function () { counterAvatar.style.opacity = 0 }, 16 * sec);
             break;
 

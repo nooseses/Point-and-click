@@ -1,0 +1,26 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "js"
+    ],
+    "fileStates": {
+        "NinjaAdventure/TilesetVillageAbandoned.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        }
+    },
+    "last.imagePath": "C:/Users/jetw3/Documents/Github/Point-and-click/NinjaAdventure/Backgrounds/Tilesets",
+    "map.height": 19,
+    "map.width": 25,
+    "openFiles": [
+    ],
+    "project": "pointclickmap.tiled-project",
+    "recentFiles": [
+        "NinjaAdventure/TilesetVillageAbandoned.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
